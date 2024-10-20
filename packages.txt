@@ -1,1 +1,2 @@
 espeak-ng
+gi==1.20
