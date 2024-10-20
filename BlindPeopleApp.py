@@ -3,6 +3,7 @@ import os
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from gtts import gTTS
+from pygame import mixer
 
 
 
@@ -85,4 +86,6 @@ if x:
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
     tts.save(audio_file_name)
-    st.audio(audio_file_name, format="audio/mpeg",loop=False)
+    mixer.init()
+    mixer.music.load(audio_file_name)
+    mixer.music.play()
