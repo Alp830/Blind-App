@@ -85,4 +85,4 @@ if x:
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
     tts.save(audio_file_name)
-    os.system("afplay" + audio_file_name)
+    play(audio_file_name)
