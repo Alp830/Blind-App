@@ -85,6 +85,5 @@ if x:
     responses = generate_multiple_llm_responses(prompt)
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
-    pygame.mixer.init()
     tts.save(audio_file_name)
     os.system(audio_file_name)
