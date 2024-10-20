@@ -2,5 +2,4 @@ streamlit
 google.generativeai
 gtts
 playsound==1.2.2
-
-
+python3-gi
