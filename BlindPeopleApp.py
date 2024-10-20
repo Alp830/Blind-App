@@ -3,7 +3,7 @@ import os
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from gtts import gTTS
-from playsound import playsound as play
+from playsound import playsound
 
 
 
@@ -85,4 +85,4 @@ if x:
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
     tts.save(audio_file_name)
-    play(audio_file_name)
+    playsound(audio_file_name)
