@@ -1,2 +1,2 @@
 espeak-ng
-gi==1.20
+python3-gi==1.20
