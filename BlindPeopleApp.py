@@ -5,7 +5,6 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from gtts import gTTS
 import pygame
 
-pygame.mixer.init()
 
 
 
@@ -86,6 +85,7 @@ if x:
     responses = generate_multiple_llm_responses(prompt)
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
+    pygame.mixer.init()
     tts.save(audio_file_name)
     pygame.mixer.music.load(audio_file_name)
     pygame.mixer.music.play()
