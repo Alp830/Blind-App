@@ -2,10 +2,8 @@ import streamlit as st
 import os
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
-import pyttsx3
-import gtts as gTTS
-from espeakng import ESpeakNG
-import gemini
+from gtts as gTTS
+
 
 
 
@@ -82,12 +80,9 @@ if x:
     sample_image_file = upload_to_gemini(sample_image, mime_type="image/jpeg")
 
     prompt.append(sample_image_file)
-
-    responses = generate_multiple_llm_responses(prompt)
-    st.write(responses[0])
-    engine = pyttsx3.init()
-
-    engine.say(responses[0])
-    engine.runAndWait()
-
     
+    responses = generate_multiple_llm_responses(prompt)
+    audio_file_name = "audio.mp3"
+    tts = gTTS(responses[0])
+    tts.save(audio_file_name)
+    st.audio(audio_file_name, format="audio/mpeg",loop=False)
