@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
-from gtts as gTTS
+from gtts import gTTS
 
 
 
