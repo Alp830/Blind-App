@@ -5,7 +5,7 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from gtts import gTTS
 import pygame
 
-    pygame.mixer.init()
+pygame.mixer.init()
 
 
 
