@@ -87,5 +87,3 @@ if x:
     tts = gTTS(responses[0])
     pygame.mixer.init()
     tts.save(audio_file_name)
-    pygame.mixer.music.load(audio_file_name)
-    pygame.mixer.music.play()
