@@ -3,7 +3,7 @@ import os
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from gtts import gTTS
-import playsound from playsound
+from playsound import playsound
 
 
 
