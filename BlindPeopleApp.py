@@ -7,8 +7,6 @@ from playsound import playsound
 
 
 
-
-
 def upload_to_gemini(path, mime_type=None):
   """Uploads the given file to Gemini.
 
@@ -87,5 +85,4 @@ if x:
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
     tts.save(audio_file_name)
-    playsound(audio_file_name)
-
+    st.audio(audio_file_name, format="audio/mpeg", loop=True)
