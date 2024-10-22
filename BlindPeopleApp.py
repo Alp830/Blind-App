@@ -5,6 +5,19 @@ from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from gtts import gTTS
 from playsound import playsound
 
+def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio controls autoplay="true">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+            """
+        st.markdown(
+            md,
+            unsafe_allow_html=True,
+        )
 
 
 def upload_to_gemini(path, mime_type=None):
@@ -85,4 +98,4 @@ if x:
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
     tts.save(audio_file_name)
-    st.audio(audio_file_name, format="audio/mpeg", loop=False, autoplay=True)
+    autoplay_audio(audio_file_name)
