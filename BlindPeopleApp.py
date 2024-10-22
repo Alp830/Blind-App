@@ -86,4 +86,4 @@ if x:
     audio_file_name = "audio.mp3"
     tts = gTTS(responses[0])
     tts.save(audio_file_name)
-    st.audio(audio_file_name, format="audio/mpeg", loop=True)
+    st.audio(audio_file_name, format="audio/mpeg", autoplay=True)
